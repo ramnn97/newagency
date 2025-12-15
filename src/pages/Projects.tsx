@@ -6,6 +6,7 @@ import mock2 from "@/assets/mock2.png";
 import mock3 from "@/assets/mock3.png";
 import mock1 from "@/assets/mock1.png";
 import mock4 from "@/assets/mock4.png";
+import AuroraBackground from "@/components/AuroraBackground";
 
 interface Project {
   id: string;
@@ -115,15 +116,18 @@ const Projects = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <Header />
+      
+      {/* Aurora Background */}
+      <AuroraBackground 
+        className="fixed inset-0 z-0"
+        radialGradient={true}
+      />
 
-      {/* Hero Section - Solid Dark Layout */}
+      {/* Hero Section - Transparent Background */}
       <section
         className="min-h-screen flex items-center relative overflow-hidden px-10 md:px-16 pt-16"
-        style={{
-          backgroundColor: "#05070b",
-        }}
       >
         <div className="max-w-6xl w-full relative z-10 text-white space-y-8 py-12 md:py-20">
           <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 border border-gray-700 hover:border-white transition-colors text-sm font-medium shadow-lg">
@@ -167,8 +171,11 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Projects Grid Section - Dark Background */}
-      <section className="px-10 md:px-16 py-24 bg-black relative overflow-hidden">
+      {/* Projects Grid Section - Transparent Background */}
+      <section 
+        id="projects-grid"
+        className="px-10 md:px-16 py-24 relative overflow-hidden"
+      >
         <div className="w-full relative z-10">
           {/* Header with Works title and Add button */}
 
@@ -183,7 +190,7 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   className="block group"
                 >
-                  <div className="relative rounded-3xl overflow-hidden bg-black border border-gray-800 hover:border-white transition-all duration-300 hover:scale-[1.02]">
+                  <div className="relative rounded-3xl overflow-hidden bg-black bg-opacity-70 border border-gray-800 hover:border-white transition-all duration-300 hover:scale-[1.02]">
                     <div
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${group.large.image})` }}
@@ -224,7 +231,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="block group"
                     >
-                      <div className="relative rounded-3xl overflow-hidden bg-black border border-gray-800 hover:border-white transition-all duration-300 hover:scale-[1.02] min-h-[400px]">
+                      <div className="relative rounded-3xl overflow-hidden bg-black bg-opacity-70 border border-gray-800 hover:border-white transition-all duration-300 hover:scale-[1.02] min-h-[400px]">
                         <div
                           className="absolute inset-0 bg-cover bg-center"
                           style={{ backgroundImage: `url(${project.image})` }}
@@ -260,7 +267,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer darkTheme={true} />
     </div>
   );
 };
