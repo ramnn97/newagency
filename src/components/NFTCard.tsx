@@ -1,117 +1,93 @@
-import React from 'react';
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import logow from "@/assets/logow.jpeg";
-import card3 from "@/assets/card3.jpg";
-import card2 from "@/assets/card2.png";
+import React from "react";
+
+const avatars = [
+  { bg: "#e54e3b" },
+  { bg: "#f59e0b" },
+  { bg: "#10b981" },
+  { bg: "#6366f1" },
+  { bg: "#ec4899" },
+];
 
 const NFTCard: React.FC = () => {
-  // Generate placeholder images
-  const placeholderImage = (text: string, width: number = 400, height: number = 300) => 
-    `https://placehold.co/${width}x${height}/333333/FFFFFF?text=${encodeURIComponent(text)}`;
-  
-  const communityTags = ['P1', 'P2', 'P3', 'P4'];
-
   return (
-    <section className="min-h-screen bg-background relative">
-      <div className="w-full h-full">
-        <div className="bg-navy-900 min-h-screen w-full px-4 md:px-12 lg:px-16 py-12 lg:py-16 shadow-2xl">
-          {/* Large rounded container in the center */}
-          <div className="bg-gray-900 rounded-3xl p-8 md:p-12 h-full">
-            {/* Top Section */}
-            <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-12 pt-12">
-              <div className="flex-1">
-                <div className="bg-white rounded-2xl p-10 md:p-16">
-                  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Geometric']">
-                    We Transform Brands Into Digital Growth Engines
-                  </h1>
-                  <p className="text-gray-600 font-medium">
-                  Stop guessing. Start scaling
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex flex-col items-center gap-8">
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-full border-2 border-white"></div>
-                  <div className="absolute inset-2 rounded-full border-2 border-white"></div>
-                  <div className="relative w-48 h-48 rounded-full bg-gray-200 flex items-center justify-center">
-                    <img 
-                      src={logow} 
-                      alt="Portrait" 
-                      className="rounded-full w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                <a 
-                  href="https://www.instagram.com/scalexstudios/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-transparent border-2 border-white text-white px-8 py-6 text-lg font-bold rounded-full flex items-center gap-2 transition-colors hover:bg-white/10"
-                >
-                  Go to Insta
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </div>
+    <section className="w-full bg-[#f6f7f9] py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 md:px-0">
+        {/* Top header */}
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+          <div className="space-y-4">
+            <span className="inline-flex items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#f97316]">
+              ScaleX Studios
+            </span>
+            <div className="space-y-1">
+              <h2 className="text-2xl md:text-3xl font-semibold leading-tight text-[#656565]">
+                We design for growth,
+              </h2>
+              <h3 className="text-2xl md:text-3xl font-semibold leading-tight text-[#1f1f1f]">
+                built for measurable results
+              </h3>
             </div>
+          </div>
 
-            {/* Middle Section (Two Columns) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-              {/* Left Column */}
-              <div className="space-y-8">
-                <div className="border-2 border-yellow-500 rounded-2xl p-8">
-                  <img 
-                    src={card2} 
-                    alt="Model" 
-                    className="w-full rounded-xl"
-                  />
-                </div>
-                <p className="text-white text-center font-medium">
-                We don't just grow brands — we engineer digital ecosystems that scale.
+          <p className="max-w-sm text-sm md:text-base text-black leading-relaxed">
+            Growth-driven design partners for SaaS and service brands ready to level up focused on strategy, results, and unlocking what’s next.
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="mt-10 grid gap-5 lg:grid-cols-12">
+          {/* Left column */}
+          <div className="lg:col-span-4">
+            <div className="rounded-2xl bg-[#0f0f0f] shadow-sm ring-1 ring-black/10 p-8 flex flex-col justify-between min-h-[340px]">
+              <div className="text-sm text-white font-medium">
+                Launch, learn, and earn back on your investment within 30 days
+              </div>
+              <div className="pt-2">
+                <p className="text-base text-white/80 leading-relaxed">
+                  Proven launch playbooks that keep CAC efficient while unlocking
+                  faster payback—so your spend fuels growth, not guesswork.
                 </p>
-                
-                <div className="rounded-2xl p-8">
-                  <img 
-                    src={card3} 
-                    alt="Unique Products" 
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
-              
-              {/* Right Column */}
-              <div className="rounded-2xl p-10">
-                <div className="rounded-xl overflow-hidden">
-                  <video 
-                    src="./src/assets/cardvideo.MOV" 
-                    autoPlay 
-                    muted 
-                    loop 
-                    className="w-full h-auto"
-                  />
-                </div>
               </div>
             </div>
+          </div>
 
-            {/* Bottom Section */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-8 pt-8 border-t border-gray-700">
-              <div className="flex items-center gap-8">
-                <div className="flex items-center gap-3">
-                  <div className=""></div>
-                  <span className="text-white font-medium"></span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className=""></div>
-                  <span className="text-white font-medium"></span>
-                </div>
+          {/* Center column */}
+          <div className="space-y-5 lg:col-span-4">
+            <div className="rounded-2xl bg-white/80 shadow-sm ring-1 ring-gray-200 p-6 flex flex-col justify-between min-h-[260px]">
+              <div className="text-sm text-[#1f1f1f] font-medium">
+                Built-for-startup launch and growth systems
+              </div>
+              <div className="pt-4">
+                <p className="text-base text-[#374151] leading-relaxed">
+                  We help ScaleX teams design, launch, and optimize experiences that
+                  convert—without guessing. Strategy, UX, and funnels tailored to
+                  your next growth milestone.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-2xl bg-white/80 shadow-sm ring-1 ring-gray-200 p-4">
+              <div className="inline-flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
+                <span className="text-xs font-semibold text-gray-600">Now booking this quarter</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column */}
+          <div className="lg:col-span-4">
+            <div className="rounded-2xl bg-[#181818] text-white shadow-lg p-6 flex flex-col justify-between min-h-[340px]">
+              <div className="space-y-3 text-sm leading-relaxed text-gray-200">
+                <p className="text-gray-100">
+                  70+ launches delivered for startup teams—helping SaaS and service brands capture more clients with experiences that convert.
+                </p>
+              </div>
+              <div className="pt-6">
+                <p className="text-base text-white/85 leading-relaxed">
+                  Partner-first, data-led, and relentlessly iterative—ScaleX Studios delivers clarity, momentum, and results you can measure.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-6 right-6 text-3xl md:text-4xl font-bold text-black drop-shadow-[0_0_8px_rgba(0,0,0,0.35)]">
-        02
       </div>
     </section>
   );

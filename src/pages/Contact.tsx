@@ -1,109 +1,140 @@
-import { Phone, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import salesIllustration from "@/assets/contact-sales.png";
-import ipIllustration from "@/assets/contact-ip.png";
-import careersIllustration from "@/assets/contact-careers.png";
 
 const Contact = () => {
-  const contactCards = [
-    {
-      title: "SALES SUPPORT",
-      phone: "+91 7972012882",
-      illustration: salesIllustration,
-      bgColor: "bg-card"
-    },
-    {
-      title: "IP ENQUIRY",
-      phone: "+91 9665543800",
-      illustration: ipIllustration,
-      bgColor: "bg-card"
-    },
-    {
-      title: "CAREERS",
-      phone: "+91 9373324191",
-      illustration: careersIllustration,
-      bgColor: "bg-card"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#f4ebe1] text-[#14110f] flex flex-col">
       <Header />
-      
-      <section className="pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-16 text-white">
-            Contact? You are at right place.
-          </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {/* Contact cards */}
-            {contactCards.map((card, index) => (
-              <div
-                key={index}
-                className={`${card.bgColor} border border-border rounded-3xl p-8 relative overflow-hidden hover:shadow-lg transition-shadow`}
-              >
-                <h3 className="text-xl font-bold mb-4">{card.title}</h3>
-                <div className="flex items-center gap-2 text-brand-orange mb-8">
-                  <Phone className="w-5 h-5" />
-                  <span className="font-semibold">{card.phone}</span>
-                </div>
-                <div className="mt-8">
-                  <img 
-                    src={card.illustration} 
-                    alt={card.title}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-              </div>
-            ))}
+      <main className="flex-1 px-4 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl grid gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)] items-start">
+          {/* Left column - editorial message */}
+          <section className="flex flex-col justify-between min-h-[420px]">
+            <div className="space-y-4">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-snug">
+                Let&apos;s scale your
+                <br />
+                brand, together.
+              </h1>
+              <p className="text-sm md:text-base">
+                Get a hello@scalexstudios.com to get started.
+              </p>
+            </div>
 
-            {/* Schedule a call */}
-            <div className="bg-brand-white border border-border rounded-3xl p-8 flex flex-col justify-between hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold mb-4 text-white">SCHEDULE A CALL</h3>
-              <Button
-                asChild
-                variant="outline"
-                className="border-2 border-white bg-transparent hover:bg-white/10 text-white font-semibold text-lg px-6 py-6 rounded-full w-fit"
-              >
-                <a
-                  href="https://wa.me/9373324191"
-                  target="_blank"
-                  rel="noopener noreferrer"
+            {/* Simple handshake illustration - inline SVG */}
+            <div className="mt-12">
+              <div className="inline-block">
+                <svg
+                  viewBox="0 0 320 120"
+                  className="h-32 w-auto text-[#14110f]"
+                  aria-hidden="true"
                 >
-                  15 Minutes
-                </a>
-              </Button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {/* Email us */}
-            <div className="bg-foreground text-background rounded-3xl p-12 hover:shadow-lg transition-shadow">
-              <h3 className="text-3xl font-bold mb-8">EMAIL US</h3>
-              <div className="border-2 border-background rounded-full px-8 py-4 inline-block">
-                <span className="text-lg font-semibold">
-                hello@scalexstudios.com</span>
+                  <rect
+                    x="10"
+                    y="60"
+                    width="110"
+                    height="35"
+                    rx="8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <rect
+                    x="200"
+                    y="60"
+                    width="110"
+                    height="35"
+                    rx="8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M120 75c20 0 30-15 50-15s30 15 50 15"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M125 85c10 8 20 12 30 12s20-4 30-12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </div>
             </div>
+          </section>
 
-            {/* Spacer for layout */}
-            <div></div>
-          </div>
+          {/* Right column - contact form */}
+          <section className="bg-[#f4ebe1]">
+            <form className="space-y-6">
+              <div className="space-y-1 text-sm">
+                <label className="block font-medium">
+                  Name <span className="text-[#b45309]">*</span>
+                </label>
+                <input
+                  type="text"
+                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f]"
+                  placeholder="Type name"
+                />
+              </div>
 
-          {/* Alternative form link */}
-          <div className="flex items-center gap-4 group cursor-pointer w-fit">
-            <span className="text-2xl font-semibold"></span>
-            <div className="w-12 h-12 rounded-full bg-brand-orange flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="space-y-1 text-sm">
+                <label className="block font-medium">
+                  Company <span className="text-[#b45309]">*</span>
+                </label>
+                <input
+                  type="text"
+                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f]"
+                  placeholder="Type company name"
+                />
+              </div>
 
-            </div>
-          </div>
+              <div className="space-y-1 text-sm">
+                <label className="block font-medium">Phone</label>
+                <input
+                  type="tel"
+                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f]"
+                  placeholder="Type phone number"
+                />
+              </div>
+
+              <div className="space-y-1 text-sm">
+                <label className="block font-medium">
+                  Email Address <span className="text-[#b45309]">*</span>
+                </label>
+                <input
+                  type="email"
+                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f]"
+                  placeholder="Type email address"
+                />
+              </div>
+
+              <div className="space-y-1 text-sm">
+                <label className="block font-medium">
+                  How can we help? <span className="text-[#b45309]">*</span>
+                </label>
+                <textarea
+                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f] min-h-[60px] resize-none"
+                  placeholder="A brief description here"
+                />
+              </div>
+
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  className="inline-flex items-center rounded-full bg-[#14110f] px-6 py-2 text-xs md:text-sm font-medium tracking-wide text-[#f4ebe1] hover:bg-black"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </section>
         </div>
-      </section>
+      </main>
 
-      <Footer />
     </div>
   );
 };

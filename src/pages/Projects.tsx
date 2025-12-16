@@ -135,13 +135,13 @@ const Projects = () => {
             <span className="w-6 h-6 rounded-full bg-white text-black text-[10px] flex items-center justify-center">▶</span>
           </button>
 
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-black leading-tight drop-shadow-lg">
+          <div className="space-y-3">
+            <h1 className="text-3xl md:text-4xl font-black leading-tight drop-shadow-lg">
               Create real-time dashboards
               <br className="hidden md:block" />
               without writing code
             </h1>
-            <p className="text-lg md:text-xl text-white max-w-2xl">
+            <p className="text-base md:text-lg text-white max-w-2xl">
               We help teams turn live data into beautiful, customizable dashboards—no devs required. Share insights, not spreadsheets.
             </p>
           </div>
@@ -267,7 +267,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <Footer darkTheme={true} />
+      <Footer blueTheme />
     </div>
   );
 };
