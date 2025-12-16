@@ -12,27 +12,16 @@ export const Footer: React.FC<FooterProps> = ({ darkTheme = false, blueTheme = f
   };
 
   const useLightText = darkTheme || blueTheme;
-  const backgroundColor = darkTheme ? "#000000" : "rgb(51, 0, 255)";
+  // Default footer background: white for regular theme, black when darkTheme
+  const backgroundColor = darkTheme ? "#000000" : "#ffffff";
 
   return (
     <footer
       id="contact"
       className={`relative py-16 overflow-hidden ${useLightText ? "text-white" : "text-black"}`}
-      style={darkTheme ? { backgroundColor } : undefined}
+      style={{ backgroundColor }}
     >
-      {/* Premium gradient background for all non-dark themes */}
-      {!darkTheme && (
-        <>
-          {/* Base diagonal gradient */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#3B1CFF] via-[#2B0FB8] to-[#1C0A8F]" />
-
-          {/* Additional radial glows for extra depth */}
-          <div className="pointer-events-none absolute inset-0 opacity-60 mix-blend-soft-light bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,0.35),transparent_55%),radial-gradient(circle_at_100%_100%,rgba(255,255,255,0.25),transparent_55%),radial-gradient(circle_at_50%_0%,rgba(129,140,248,0.45),transparent_60%)]" />
-
-          {/* Very subtle grain/texture overlay */}
-          <div className="pointer-events-none absolute inset-0 opacity-[0.35] mix-blend-overlay bg-[linear-gradient(120deg,rgba(255,255,255,0.05)_0,rgba(255,255,255,0.0)_40%,rgba(0,0,0,0.15)_60%,rgba(255,255,255,0.03)_100%)]" />
-        </>
-      )}
+      {/* No gradient overlays when using a white background; keep overlays only for dark theme if ever needed */}
 
       <div className="relative container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
