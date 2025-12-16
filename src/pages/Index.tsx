@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { CaseStudies } from "@/components/CaseStudies";
 import { Expertise } from "@/components/Expertise";
 import { Footer } from "@/components/Footer";
+import AnimatedPages from "@/components/AnimatedPages";
 import NeuralBg from "@/components/NeuralBg";
 import NFTCard from "@/components/NFTCard";
 
@@ -23,9 +24,10 @@ const Index = () => {
         <NFTCard />
         <CaseStudies />
         <Expertise />
+        <AnimatedPages />
       </main>
 
-      <Footer />
+      <Footer darkTheme />
     </div>
   );
 };

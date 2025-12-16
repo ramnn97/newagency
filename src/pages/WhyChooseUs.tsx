@@ -1,76 +1,154 @@
+import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Footer } from "@/components/Footer";
 
 const WhyChooseUs = () => {
+  const [count, setCount] = useState(0);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [slideUp, setSlideUp] = useState(false);
+
+  const features = [
+    {
+      title: "Launch, learn, and earn back on your investment within 30 days",
+      description: "Proven launch playbooks that keep CAC efficient while unlocking faster payback—so your spend fuels growth, not guesswork."
+    },
+    {
+      title: "Built-for-startup launch and growth systems",
+      description: "We help ScaleX teams design, launch, and optimize experiences that convert—without guessing. Strategy, UX, and funnels tailored to your next growth milestone."
+    },
+    {
+      title: "Now booking this quarter",
+      description: "70+ launches delivered for startup teams—helping SaaS and service brands capture more clients with experiences that convert."
+    }
+  ];
+
+  const values = [
+    "Partner-first approach",
+    "Data-led decisions",
+    "Relentlessly iterative process",
+    "Clarity in execution",
+    "Momentum building",
+    "Measurable results"
+  ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          setSlideUp(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (isVisible) {
+      let start = 0;
+      const end = 70;
+      const duration = 3000; // 3 seconds
+      const incrementTime = 20;
+      const increment = (end / duration) * incrementTime;
+      
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(Math.ceil(start));
+        }
+      }, incrementTime);
+
+      return () => clearInterval(timer);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="relative min-h-screen bg-black text-white">
+    <div className="relative min-h-screen bg-white text-black">
       <Header />
       <ScrollProgress />
 
-      <main className="relative z-10 py-16 md:py-24">
+      <main className="relative z-10 py-24">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 items-stretch rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-black">
-            {/* Left panel set to solid black */}
-            <div
-              className="relative min-h-[520px] bg-black"
-            >
-              {/* big number (tinted so it's visible on both white and blue) */}
-              <div className="absolute inset-y-10 left-6 flex flex-col justify-between pointer-events-none">
-                <span
-                  className="text-8xl md:text-9xl font-black leading-none"
-                  style={{ color: "rgba(255,255,255,0.12)" }}
-                >
-                  02
-                </span>
-              </div>
+          {/* Hero Section */}
+          <section className="text-center mb-24">
+            <div className="mb-8">
+              <span className="text-brand-orange font-medium">WHY CHOOSE US</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black text-black mb-8 leading-tight">
+              SCALEX STUDIOS
+            </h1>
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-orange mb-10 max-w-4xl mx-auto">
+              We design for growth, built for measurable results
+            </h2>
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+              Growth-driven design partners for SaaS and service brands ready to level up focused on strategy, results, and unlocking what's next.
+            </p>
+          </section>
 
-              {/* rotated label (tinted blue) */}
-              <div className="absolute inset-y-0 left-0 flex items-center">
-                <span
-                  className="-rotate-90 text-5xl md:text-6xl font-black tracking-[0.18em]"
-                  style={{ color: "rgba(255,255,255,0.22)" }}
-                >
-                  CHOOSE
-                </span>
+          {/* Features Grid */}
+          <section className="mb-24">
+            <div className="grid md:grid-cols-3 gap-12">
+              {features.map((feature, index) => (
+                <div key={index} className="border-l-2 border-brand-orange pl-6 py-2">
+                  <h3 className="text-2xl font-bold text-black mb-6">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Values Section */}
+          <section className="mb-24">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-16 text-center">
+                Partner-first, data-led, and relentlessly iterative—ScaleX Studios delivers clarity, momentum, and results you can measure.
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {values.map((value, index) => (
+                  <div key={index} className="border-l-2 border-brand-orange pl-4 py-1">
+                    <span className="text-black text-lg">{value}</span>
+                  </div>
+                ))}
               </div>
             </div>
+          </section>
 
-            {/* Right content card on black */}
-            <div className="bg-black text-white p-10 md:p-12 lg:p-14 flex flex-col gap-6 border-l border-white/10">
-              <div className="flex items-center gap-3 text-xs font-semibold tracking-wide uppercase text-white/70">
-                <span className="h-2 w-2 rounded-full bg-white/80" />
-                <span>ScaleX Studios</span>
-                <div className="flex-1 h-px bg-white/10" />
+          {/* Stats Section */}
+          <section 
+            ref={statsRef} 
+            className={`text-center py-16 border-t border-gray-200 transition-all duration-1000 ease-out ${
+              slideUp ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+            }`}
+          >
+            <div className="flex items-center justify-center gap-6">
+              <div className="relative">
+                <span className="text-7xl md:text-8xl font-black text-brand-orange animate-pulse">
+                  {count}
+                </span>
+                <span className="absolute -top-2 -right-2 text-4xl text-black">+</span>
               </div>
-
-              <h1 className="text-2xl md:text-3xl font-black text-white">Why Choose Us?</h1>
-
-              <p className="italic text-white/80">Your Growth is Our Priority!</p>
-
-              <ul className="space-y-2 text-sm md:text-base text-white/90">
-                <li>
-                  <strong>Creative Innovation:</strong> Fresh, unique, high-impact designs that resonate with your audience.
-                </li>
-                <li>
-                  <strong>Strategic Thinking:</strong> Every campaign is backed by research, trends, and insights to maximize engagement.
-                </li>
-                <li>
-                  <strong>Tailored Solutions:</strong> Strategies customized to your goals for optimal results.
-                </li>
-                <li>
-                  <strong>End-to-End Expertise:</strong> From concept to execution, we cover all branding and marketing needs.
-                </li>
-                <li>
-                  <strong>Results-Driven Approach:</strong> Measurable success across every design, campaign, and strategy.
-                </li>
-              </ul>
-
-              <p className="text-slate-700 leading-relaxed">
-                At ScaleX Studios, we redefine creativity with purpose—bringing brands to life and delivering meaningful engagement.
-              </p>
+              <div className="text-left">
+                <span className="text-2xl md:text-3xl font-bold text-black block">launches delivered</span>
+                <span className="text-brand-orange text-lg">for startup teams worldwide</span>
+              </div>
             </div>
-          </div>
+          </section>
         </div>
       </main>
 

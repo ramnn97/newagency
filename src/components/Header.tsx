@@ -8,8 +8,8 @@ const navItems = [
 
 const menuItems = [
   { label: "HOME", href: "/" },
-  { label: "ABOUT", href: "/#about" },
-  { label: "SERVICES", href: "/#services" },
+  { label: "ABOUT", href: "/about" },
+  { label: "SERVICES", href: "/services" },
   { label: "PROJECTS", href: "/projects" },
   { label: "CONTACT", href: "/contact" },
   { label: "CAREERS", href: "/careers" },
@@ -136,25 +136,3 @@ export const Header = () => {
     </>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
