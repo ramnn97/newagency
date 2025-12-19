@@ -235,19 +235,27 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,_var(--tw-gradient-stops))] from-pink-900/10 via-transparent to-transparent"></div>
+      
       <Header />
       <ScrollProgress />
-
+      
       <main className="relative z-10 py-32">
         <div ref={sectionRef} className="container mx-auto px-6">
-          <div className="text-center mb-28">
-            <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight">
+          <div className="text-center mb-28 relative">
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-purple-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob"></div>
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-60 h-60 bg-pink-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+            
+            <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight relative z-10">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-orange via-pink-500 to-purple-500">
                 PREMIUM SERVICES
               </span>
             </h1>
-            <p ref={subtitleRef} className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
+            <p ref={subtitleRef} className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light relative z-10">
               Elevating brands through visionary design and cutting-edge technology solutions that drive measurable growth.
             </p>
           </div>
@@ -258,37 +266,40 @@ const Services = () => {
                 key={index}
                 ref={el => serviceRefs.current[index] = el}
                 whileHover={{ y: -10 }}
-                className="group bg-gradient-to-br from-gray-800/40 to-gray-900/60 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 hover:border-gray-600/70 transition-all duration-500 cursor-pointer shadow-lg"
+                className="group bg-gradient-to-br from-gray-800/40 to-gray-900/60 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 hover:border-gray-600/70 transition-all duration-500 cursor-pointer shadow-lg relative overflow-hidden"
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="text-5xl service-icon transition-transform duration-300">{service.icon}</div>
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-brand-orange to-pink-500 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="text-5xl service-icon transition-transform duration-300">{service.icon}</div>
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-brand-orange to-pink-500 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 tracking-tight">{service.title}</h3>
-                <p className="text-gray-300 leading-relaxed mb-6 font-light">{service.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {service.features.map((feature, idx) => (
-                    <span key={idx} className="text-xs font-semibold px-3 py-1 bg-gray-700/50 rounded-full text-gray-300">
-                      {feature}
-                    </span>
-                  ))}
+                  <h3 className="text-2xl font-bold mb-4 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">{service.title}</h3>
+                  <p className="text-gray-300 leading-relaxed mb-6 font-light">{service.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {service.features.map((feature, idx) => (
+                      <span key={idx} className="text-xs font-semibold px-3 py-1 bg-gray-700/50 rounded-full text-gray-300 border border-gray-600/50">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
           {/* Premium CTA Section */}
-          <div ref={ctaRef} className="mt-32 text-center max-w-5xl mx-auto">
-            <div className="relative inline-block">
-              <div className="absolute -inset-1 bg-gradient-to-r from-brand-orange via-pink-500 to-purple-500 rounded-lg blur opacity-75"></div>
-              <button className="relative bg-gray-900 text-white font-bold py-5 px-16 rounded-lg text-xl tracking-wide hover:bg-transparent transition-all duration-500 transform hover:scale-105">
+          <div ref={ctaRef} className="mt-32 text-center max-w-5xl mx-auto relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-brand-orange via-pink-500 to-purple-500 rounded-xl blur-lg opacity-30 animate-pulse"></div>
+            <button className="relative bg-gradient-to-r from-gray-900 to-black text-white font-bold py-5 px-16 rounded-xl text-xl tracking-wide hover:from-gray-800 hover:to-gray-900 transition-all duration-500 transform hover:scale-105 border border-gray-700 group">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-pink-500 group-hover:from-white group-hover:to-white transition-all duration-500">
                 INITIATE COLLABORATION
-              </button>
-            </div>
+              </span>
+            </button>
             <p className="mt-8 text-lg text-gray-400 max-w-2xl mx-auto">
               Partner with us to transform your vision into extraordinary digital experiences that captivate audiences and drive sustainable growth.
             </p>

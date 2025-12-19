@@ -104,12 +104,7 @@ const AnimatedPages = () => {
       </section>
 
       {/* Section 3: ScaleX Studios wordmark */}
-      <section className="w-full text-black pt-4 pb-0 md:pt-6 md:pb-0 px-0 mb-[-1.5rem] md:mb-[-2rem] flex justify-center">
-        {/* Tip: adjust the text-[px] values below to quickly change the size */}
-        <h2 className="text-center text-[80px] md:text-[140px] lg:text-[200px] font-bold tracking-tight leading-none px-6 md:px-12 lg:px-24">
-          ScaleX Studios
-        </h2>
-      </section>
+
     </div>
   );
 };

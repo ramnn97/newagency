@@ -5,14 +5,14 @@ import mainpage from "@/assets/mainpage.jpeg";
 
 const About = () => {
   return (
-    <div className="relative min-h-screen bg-[#f5f5f0] text-gray-900">
+    <div className="relative min-h-screen bg-black text-white">
       <Header />
       <ScrollProgress />
 
       <main className="relative z-10">
         {/* Small Title at Top Left */}
         <div className="px-6 md:px-12 lg:px-16 pt-24 md:pt-32">
-          <h1 className="text-lg md:text-xl font-bold text-[#2d5016] mb-4 text-left">
+          <h1 className="text-lg md:text-xl font-bold text-white mb-4 text-left">
             ABOUT US
           </h1>
         </div>
@@ -29,7 +29,7 @@ const About = () => {
         {/* Introduction Section - Two Column - Full Width */}
         <section className="mb-16 md:mb-20 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 lg:gap-32">
           <div className="pl-6 md:pl-12 lg:pl-16">
-            <p className="text-xl md:text-2xl font-bold text-[#2d5016] leading-relaxed">
+            <p className="text-xl md:text-2xl font-bold text-white leading-relaxed">
               ScaleX was created with a clear purpose:
               <br />
               to make every journey comfortable,
@@ -38,7 +38,7 @@ const About = () => {
             </p>
           </div>
           <div className="pr-6 md:pr-12 lg:pr-16">
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed text-right">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed text-right">
               With many years of experience
               <br />
               in the digital industry, our team
@@ -55,10 +55,10 @@ const About = () => {
           <section className="mb-16 md:mb-20 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
             {/* Left Column - What we do */}
             <div>
-              <h2 className="text-lg md:text-xl font-semibold text-[#2d5016] mb-4 underline">
+              <h2 className="text-lg md:text-xl font-semibold text-white mb-4 underline">
                 What we do?
               </h2>
-              <p className="text-xl md:text-2xl font-bold text-[#2d5016] leading-relaxed">
+              <p className="text-xl md:text-2xl font-bold text-white leading-relaxed">
                 We provide premium digital solutions
                 <br />
                 with a personal touch.
@@ -67,10 +67,10 @@ const About = () => {
 
             {/* Middle Column - Our Services */}
             <div>
-              <h2 className="text-lg md:text-xl font-semibold text-[#2d5016] mb-4 underline">
+              <h2 className="text-lg md:text-xl font-semibold text-white mb-4 underline">
                 Our Services
               </h2>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                 Our expertise includes brand strategy, web development, and content creation - perfect for startups and established companies. For larger projects, our comprehensive services deliver the same level of quality and attention to detail.
               </p>
             </div>
