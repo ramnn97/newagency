@@ -11,8 +11,8 @@ const menuItems = [
   { label: "ABOUT", href: "/about" },
   { label: "SERVICES", href: "/services" },
   { label: "PROJECTS", href: "/projects" },
-  { label: "CONTACT", href: "/contact" },
   { label: "CAREERS", href: "/careers" },
+  { label: "CONTACT", href: "/contact" },
 ];
 
 export const Header = () => {

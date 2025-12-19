@@ -7,7 +7,10 @@ import mock3 from "@/assets/mock3.png";
 import mock1 from "@/assets/mock1.png";
 import mock4 from "@/assets/mock4.png";
 import AuroraBackground from "@/components/AuroraBackground";
-
+import mock5 from "@/assets/mock5.png";
+import mock6 from "@/assets/mock6.png";
+import mock7 from "@/assets/mock7.png";
+import mock8 from "@/assets/mock8.png";
 interface Project {
   id: string;
   title: string;
@@ -39,11 +42,11 @@ const projects: Project[] = [
     image: mock3,
   },
   {
-    id: "bcf",
-    title: "",
-    subtitle: "",
-    description: "",
-    category: "",
+    id: "jinx",
+    title: "Jinx",
+    subtitle: "India",
+    description: "Brand Identity & Web Design",
+    category: "Brand Identity & Web Design",
     url: "https://tala-gamma.vercel.app/",
     image: mock4,
   },
@@ -57,40 +60,40 @@ const projects: Project[] = [
     image: mock1,
   },
   {
-    id: "panchayat",
-    title: "Panchayat",
-    subtitle: "Amazon Prime",
-    description: "Digital Campaign",
-    category: "Digital Campaign",
-    url: "https://amazonprime.com/panchayat",
-    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=400&fit=crop",
-  },
-  {
-    id: "enclave",
-    title: "Enclave",
-    subtitle: "Block Chain",
-    description: "Blockchain Platform",
-    category: "Blockchain Platform",
-    url: "https://enclave.io",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop",
-  },
-  {
-    id: "clothing",
-    title: "2.0",
-    subtitle: "Clothing",
-    description: "E-Commerce WebApp",
-    category: "E-Commerce WebApp",
-    url: "https://2point0clothing.com",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
-  },
-  {
-    id: "staap",
-    title: "Staap",
-    subtitle: "Stories of Art",
+    id: "Hopsital Website",
+    title: "Hospital Website",
+    subtitle: "India",
     description: "Website",
     category: "Website",
-    url: "https://staap.com",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
+    url: "https://white-lotus-portal.vercel.app/",
+    image: mock5,
+  },
+  {
+    id: "E-commerce Website",
+    title: "E-commerce Website",
+    subtitle: "India",
+    description: "Website",
+    category: "Website",
+    url: "https://ecommercewebsite.com",
+    image: mock6,
+  },
+  {
+    id: "Chatapp",
+    title: "Chatapp",
+    subtitle: "India",
+    description: "Chatapp",
+    category: "Chatapp",
+    url: "https://chatapp.com",
+    image: mock7,
+  },
+  {
+    id: "Educational Website",
+    title: "Educational Website",
+    subtitle: "India",
+    description: "Educational Website",
+    category: "Website",
+    url: "https://educationalwebsite.com",
+    image: mock8,
   },
   {
     id: "zaap",
@@ -142,7 +145,7 @@ const Projects = () => {
               without writing code
             </h1>
             <p className="text-base md:text-lg text-white max-w-2xl">
-              We help teams turn live data into beautiful, customizable dashboards—no devs required. Share insights, not spreadsheets.
+              We have worked with a variety of clients to create a variety of projects.
             </p>
           </div>
 
@@ -267,7 +270,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <Footer blueTheme />
+      <Footer darkTheme />
     </div>
   );
 };

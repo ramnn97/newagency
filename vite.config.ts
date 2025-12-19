@@ -15,4 +15,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Treat video files as static assets so esbuild doesn't try to parse them as JS
+  assetsInclude: ["**/*.mp4", "**/*.mov", "**/*.MOV"],
 }));

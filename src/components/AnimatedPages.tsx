@@ -1,107 +1,114 @@
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import YellowPage from "./YellowPage";
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+import sxsLogo from '../assets/sxs-logo.jpeg';
 
 const AnimatedPages = () => {
-  useEffect(() => {
-    // Refresh ScrollTrigger to ensure proper calculations
-    ScrollTrigger.refresh();
-
-    // Animation for page 4 (blue)
-    const page4Timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".page4",
-        start: "top top",
-        end: "bottom top",
-        scrub: 2,
-        pin: true,
-        anticipatePin: 1
-      }
-    });
-
-    page4Timeline
-      .fromTo(".page4 h1", {
-        x: "100%",
-        opacity: 0,
-        scale: 0.8,
-        rotationY: 90
-      }, {
-        x: 0,
-        opacity: 1,
-        scale: 1,
-        rotationY: 0,
-        duration: 1,
-        ease: "power2.out"
-      })
-      .to(".page4 h1", {
-        x: "-150%",
-        rotation: 180,
-        duration: 2,
-        ease: "none"
-      });
-
-    // Animation for page 5 (white)
-    const page5Timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".page5",
-        start: "top top",
-        end: "bottom top",
-        scrub: 2,
-        pin: true,
-        anticipatePin: 1
-      }
-    });
-
-    page5Timeline
-      .fromTo(".page5 h1", {
-        x: "100%",
-        opacity: 0,
-        rotationX: 90,
-        scale: 0.5
-      }, {
-        x: 0,
-        opacity: 1,
-        rotationX: 0,
-        scale: 1,
-        duration: 1,
-        ease: "back.out(1.7)"
-      })
-      .to(".page5 h1", {
-        x: "-150%",
-        rotation: -180,
-        duration: 2,
-        ease: "none"
-      });
-
-    // Refresh ScrollTrigger after setting up animations
-    ScrollTrigger.refresh();
-
-    // Cleanup function
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-
   return (
-    <div>
-      <YellowPage />
-      
-      {/* Page 4 - Solid Blue */}
-      <section className="page4 h-screen w-full bg-blue-500 flex items-center justify-center overflow-hidden">
-        <h1 className="text-7xl md:text-9xl font-black text-white whitespace-nowrap">
-          BLUE
-        </h1>
+    <div className="w-full bg-[#f5f5f7] text-slate-900">
+      {/* Section 1: This is how we work */}
+      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-24">
+        <div className="max-w-6xl">
+          {/* Big heading */}
+          <h2 className="text-4xl md:text-6xl lg:text-[4.25rem] font-black leading-tight mb-10 md:mb-16">
+            This is how
+            <br />
+            we work
+          </h2>
+
+          {/* Three-column content */}
+          <div className="grid gap-10 md:gap-16 md:grid-cols-3 text-sm md:text-base leading-relaxed text-slate-600">
+            <div className="space-y-3">
+              <h3 className="text-base md:text-lg font-bold text-slate-900">
+                Background
+              </h3>
+              <p>
+                Our team of creative experts specializes in delivering comprehensive branding
+                solutions, from eye-catching logos and cohesive visual identities to cutting-edge
+                websites, mobile apps, and engaging multimedia content
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-base md:text-lg font-bold text-slate-900">
+                What we do
+              </h3>
+              <p>
+                We are a concept driven brand design agency that helps companies build, communicate
+                and strengthen their brand identities and ideas.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-base md:text-lg font-bold text-slate-900">
+                Philosophy
+              </h3>
+              <p>
+                We always work in regards to the final output, be it an application, website,
+                product etc. Since final output is where the identity should thrive and not in an
+                impressive design presentation or PDF.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Page 5 - Solid White */}
-      <section className="page5 h-screen w-full bg-white flex items-center justify-center overflow-hidden">
-        <h1 className="text-7xl md:text-9xl font-black text-black whitespace-nowrap">
-          WHITE
-        </h1>
+      {/* Section 2: Collaboration / Not just a Brand */}
+      <section className="pb-20 md:pb-28 px-6 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto grid gap-8 lg:gap-10 lg:grid-cols-2">
+          {/* Left card */}
+          <article className="bg-white rounded-3xl shadow-sm overflow-hidden flex flex-col">
+            <div className="aspect-[16/9] w-full overflow-hidden">
+              <img
+                src="https://ik.imagekit.io/99y1fc9mh/TIC_Globe/images/about/handshake%201.png"
+                alt="Collaboration handshake"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            {/* Bottom-left text block */}
+            <div className="p-7 md:p-9 space-y-4 md:space-y-5 mt-auto">
+              <h3 className="text-3xl md:text-4xl font-semibold text-slate-900">
+                Collaboration is Key
+              </h3>
+              <p className="text-base md:text-lg leading-relaxed text-slate-600">
+                ScaleX is built on the belief that successful branding comes from a collaborative
+                process. We work closely with our clients, ensuring they feel confident and
+                supported at every stage of building their brand.
+              </p>
+            </div>
+          </article>
+
+          {/* Right card */}
+          <article className="bg-white rounded-3xl shadow-sm overflow-hidden flex flex-col">
+            {/* Top-right text block */}
+            <div className="flex-1 flex flex-col items-end text-right p-9 md:p-12 space-y-4 md:space-y-6">
+              <div className="max-w-lg">
+                <h3 className="text-3xl md:text-4xl font-semibold text-slate-900">
+                  Not just a Brand
+                </h3>
+                <p className="mt-4 text-base md:text-lg leading-relaxed text-slate-600">
+                  While logo, colours, and fonts are the entirety of their brand in some instances,
+                  it&apos;s often just a small part of what the audience experiences.
+                </p>
+                <p className="mt-4 text-base md:text-lg leading-relaxed text-slate-600">
+                  In fact, a well‑designed landing page can communicate much more than a logo alone.
+                </p>
+              </div>
+            </div>
+            <div className="aspect-[4/3] w-full overflow-hidden">
+              <img
+                src="https://i.pinimg.com/736x/55/39/ca/5539ca8c75a79cdddc9353cd22c8772f.jpg"
+                alt="Product detail watch"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* Section 3: ScaleX Studios wordmark */}
+      <section className="w-full text-black pt-4 pb-0 md:pt-6 md:pb-0 px-0 mb-[-1.5rem] md:mb-[-2rem] flex justify-center">
+        {/* Tip: adjust the text-[px] values below to quickly change the size */}
+        <h2 className="text-center text-[80px] md:text-[140px] lg:text-[200px] font-bold tracking-tight leading-none px-6 md:px-12 lg:px-24">
+          ScaleX Studios
+        </h2>
       </section>
     </div>
   );

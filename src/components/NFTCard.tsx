@@ -7,10 +7,9 @@ const NFTCard: React.FC = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Update visibility state every time the section enters or exits the viewport
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) {
@@ -25,87 +24,112 @@ const NFTCard: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Top header */}
-        <div className={`flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 transition-all duration-1000 ease-out ${
+    <section 
+      ref={sectionRef} 
+      className="relative w-full min-h-screen py-16 overflow-hidden bg-black text-white"
+    >
+      {/* Horizontal grid lines */}
+      <div className="absolute inset-0 opacity-15">
+        {Array.from({ length: 25 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute left-0 right-0 border-t border-gray-300"
+            style={{ top: `${i * 4}%`, height: '1px' }}
+          />
+        ))}
+      </div>
+
+      <div className="relative mx-auto max-w-[1600px] px-8 lg:px-16">
+        <div className={`transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="space-y-6">
-            <span className="text-brand-orange font-medium">ScaleX Studios</span>
-            <div className="space-y-3">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-black">
-                We design for growth,
-              </h2>
-              <h3 className="text-4xl md:text-5xl font-bold leading-tight text-brand-orange">
-                built for measurable results
-              </h3>
+          {/* Main text layout */}
+          <div className="relative pt- pb-32 lg:pb-32 space-y-16 lg:space-y-16">
+            {/* Top row */}
+            <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-8 lg:gap-12">
+              <div className="flex-shrink-0">
+                <span 
+                  className="text-6xl md:text-7xl lg:text-8xl font-light italic text-white leading-tight"
+                  style={{
+                    textShadow: '0.5px 0.5px 0px rgba(255, 255, 255, 0.9), -0.5px -0.5px 0px rgba(255, 255, 255, 0.9), 0.5px -0.5px 0px rgba(255, 255, 255, 0.9), -0.5px 0.5px 0px rgba(255, 255, 255, 0.9)',
+                    letterSpacing: '-0.03em',
+                    WebkitFontSmoothing: 'antialiased'
+                  }}
+                >
+                  DEVELOPMENT +
+                </span>
+              </div>
+              <div className="flex-grow lg:pl-8">
+                <span 
+                  className="text-6xl md:text-7xl lg:text-8xl font-light italic block leading-tight" 
+                  style={{ 
+                    color: '#E8DCC6',
+                    letterSpacing: '-0.03em',
+                    WebkitFontSmoothing: 'antialiased'
+                  }}
+                >
+                  WEB & BRANDING
+                </span>
+              </div>
+            </div>
+
+            {/* Second row */}
+            <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-8 lg:gap-12">
+              <div className="flex-shrink-0">
+                <span className="text-5xl md:text-6xl lg:text-7xl font-normal text-white leading-tight">
+                 
+                  FOR GROWING BRANDS
+                  <span className="text-3xl align-super ml-1">©</span>
+                </span>
+              </div>
+              <div className="flex-grow lg:pl-8">
+                <span className="text-5xl md:text-6xl lg:text-7xl font-normal text-white block leading-tight">
+                FOCUSED ON
+
+                </span>
+              </div>
+            </div>
+
+            {/* Third row */}
+            <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-start gap-8 lg:gap-12">
+              <div className="hidden lg:block lg:w-1/3 flex-shrink-0"></div>
+              <div className="flex-grow lg:pl-8">
+                <span 
+                  className="text-6xl md:text-7xl lg:text-8xl font-light italic block leading-tight" 
+                  style={{ 
+                    color: '#E8DCC6',
+                    letterSpacing: '-0.03em',
+                    WebkitFontSmoothing: 'antialiased'
+                  }}
+                >
+                  HIGH-PERFORMANCE
+DIGITAL PRODUCTS
+
+                </span>
+              </div>
             </div>
           </div>
 
-          <p className="max-w-md text-lg text-gray-600 leading-relaxed lg:text-right">
-            Growth-driven design partners for SaaS and service brands ready to level up focused on strategy, results, and unlocking what's next.
-          </p>
-        </div>
-
-        {/* Grid */}
-        <div className="grid gap-8 lg:grid-cols-3">
-          {/* Left column */}
-          <div className={`lg:col-span-1 transition-all duration-1000 ease-out delay-100 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          {/* Bottom left labels */}
+          <div className={`mt-16 lg:mt-0 lg:absolute lg:bottom-8 left-8 lg:left-16 space-y-1.5 transition-all duration-1000 ease-out delay-300 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}>
-            <div className="border-l-2 border-brand-orange pl-6 py-2">
-              <h3 className="text-2xl font-bold text-black mb-4">
-                Launch, learn, and earn back on your investment within 30 days
-              </h3>
-              <p className="text-base text-gray-600 leading-relaxed">
-                Proven launch playbooks that keep CAC efficient while unlocking
-                faster payback—so your spend fuels growth, not guesswork.
-              </p>
+            <div className="text-sm lg:text-base text-gray-300 leading-relaxed">
+              <span className="font-normal">WEB:</span> <span className="text-gray-100 ml-1">SCALEX STUDIOS</span>
             </div>
-          </div>
-
-          {/* Center column */}
-          <div className={`lg:col-span-1 transition-all duration-1000 ease-out delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            <div className="border-l-2 border-brand-orange pl-6 py-2">
-              <h3 className="text-2xl font-bold text-black mb-4">
-                Built-for-startup launch and growth systems
-              </h3>
-              <p className="text-base text-gray-600 leading-relaxed">
-                We help ScaleX teams design, launch, and optimize experiences that
-                convert—without guessing. Strategy, UX, and funnels tailored to
-                your next growth milestone.
-              </p>
+            <div className="text-sm lg:text-base text-gray-300 leading-relaxed">
+              <span className="font-normal">UX/UI:</span> <span className="text-gray-100 ml-1">IN-HOUSE</span>
             </div>
-          </div>
-
-          {/* Right column */}
-          <div className={`lg:col-span-1 transition-all duration-1000 ease-out delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            <div className="border-l-2 border-brand-orange pl-6 py-2">
-              <h3 className="text-2xl font-bold text-black mb-4">
-                70+ launches delivered for startup teams
-              </h3>
-              <p className="text-base text-gray-600 leading-relaxed mb-6">
-                Helping SaaS and service brands capture more clients with experiences that convert.
-              </p>
-              <p className="text-base text-gray-700 leading-relaxed italic">
-                Partner-first, data-led, and relentlessly iterative—ScaleX Studios delivers clarity, momentum, and results you can measure.
-              </p>
+         
+            <div className="text-sm lg:text-base text-gray-300 leading-relaxed">
+              <span className="font-normal">STRATEGY:</span> <span className="text-gray-100 ml-1">CONTENT & GROWTH</span>
             </div>
-          </div>
-        </div>
-        
-        {/* Booking Status */}
-        <div className={`mt-12 pt-8 border-t border-gray-200 transition-all duration-1000 ease-out delay-500 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-            <span className="text-lg font-medium text-black">Now booking this quarter</span>
+            <div className="text-sm lg:text-base text-gray-300 leading-relaxed">
+              <span className="font-normal">PLATFORMS:</span> <span className="text-gray-100 ml-1">INSTAGRAM / META / LINKEDIN</span>
+            </div>
+            <div className="text-sm lg:text-base text-gray-300 leading-relaxed">
+              <span className="font-normal">EXECUTION:</span> <span className="text-gray-100 ml-1">CREATIVE + ANALYTICS</span>
+            </div>
           </div>
         </div>
       </div>

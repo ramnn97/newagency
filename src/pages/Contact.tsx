@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-[#f4ebe1] text-[#14110f] flex flex-col">
+    <div className="min-h-screen bg-black text-white flex flex-col">
       <Header />
 
       <main className="flex-1 px-4 py-16 md:py-24">
@@ -15,7 +15,7 @@ const Contact = () => {
                 <br />
                 brand, together.
               </h1>
-              <p className="text-sm md:text-base">
+              <p className="text-sm md:text-base text-white/80">
                 Get a hello@scalexstudios.com to get started.
               </p>
             </div>
@@ -25,7 +25,7 @@ const Contact = () => {
               <div className="inline-block">
                 <svg
                   viewBox="0 0 320 120"
-                  className="h-32 w-auto text-[#14110f]"
+                  className="h-32 w-auto text-white"
                   aria-hidden="true"
                 >
                   <rect
@@ -68,15 +68,26 @@ const Contact = () => {
           </section>
 
           {/* Right column - contact form */}
-          <section className="bg-[#f4ebe1]">
-            <form className="space-y-6">
+          <section className="bg-black">
+            <form 
+              action="https://formsubmit.co/hello@scalexstudios.com" 
+              method="POST"
+              className="space-y-6"
+            >
+              {/* FormSubmit configuration - sends all form data to hello@scalexstudios.com */}
+              <input type="hidden" name="_subject" value="New Contact Form Submission from ScaleX Website" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              
               <div className="space-y-1 text-sm">
                 <label className="block font-medium">
                   Name <span className="text-[#b45309]">*</span>
                 </label>
                 <input
                   type="text"
-                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f]"
+                  name="name"
+                  required
+                  className="w-full border-0 border-b border-white/40 bg-transparent py-2 text-sm outline-none focus:border-white"
                   placeholder="Type name"
                 />
               </div>
@@ -87,7 +98,9 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f]"
+                  name="company"
+                  required
+                  className="w-full border-0 border-b border-white/40 bg-transparent py-2 text-sm outline-none focus:border-white"
                   placeholder="Type company name"
                 />
               </div>
@@ -96,7 +109,8 @@ const Contact = () => {
                 <label className="block font-medium">Phone</label>
                 <input
                   type="tel"
-                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f]"
+                  name="phone"
+                  className="w-full border-0 border-b border-white/40 bg-transparent py-2 text-sm outline-none focus:border-white"
                   placeholder="Type phone number"
                 />
               </div>
@@ -107,7 +121,9 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
-                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f]"
+                  name="email"
+                  required
+                  className="w-full border-0 border-b border-white/40 bg-transparent py-2 text-sm outline-none focus:border-white"
                   placeholder="Type email address"
                 />
               </div>
@@ -117,7 +133,9 @@ const Contact = () => {
                   How can we help? <span className="text-[#b45309]">*</span>
                 </label>
                 <textarea
-                  className="w-full border-0 border-b border-[#c0b3a4] bg-transparent py-2 text-sm outline-none focus:border-[#14110f] min-h-[60px] resize-none"
+                  name="message"
+                  required
+                  className="w-full border-0 border-b border-white/40 bg-transparent py-2 text-sm outline-none focus:border-white min-h-[60px] resize-none"
                   placeholder="A brief description here"
                 />
               </div>
@@ -125,7 +143,7 @@ const Contact = () => {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="inline-flex items-center rounded-full bg-[#14110f] px-6 py-2 text-xs md:text-sm font-medium tracking-wide text-[#f4ebe1] hover:bg-black"
+                  className="inline-flex items-center rounded-full bg-white px-6 py-2 text-xs md:text-sm font-medium tracking-wide text-black hover:bg-gray-200"
                 >
                   Send Message
                 </button>
