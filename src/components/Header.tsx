@@ -56,10 +56,10 @@ export const Header = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-center">
             <div className="flex items-center gap-6 rounded-full bg-white/20 border border-white/25 backdrop-blur-xl px-5 md:px-8 py-3 shadow-lg w-full max-w-4xl">
-                <NavLink to="" className="flex items-center gap-3">
-                  <img src={sxsLogo} alt="ScaleX Studios" className="h-8 w-8 rounded-full border border-white/60" />
-                  <span className="text-lg font-semibold text-blue-800">ScaleX Studios</span>
-                </NavLink>
+              <NavLink to="/" className="flex items-center gap-3">
+                <img src={sxsLogo} alt="ScaleX Studios" className="h-8 w-8 rounded-full border border-white/60" />
+                <span className="text-lg font-semibold text-white">ScaleX Studios</span>
+              </NavLink>
 
               <nav className="hidden md:flex items-center gap-6 text-white">
                 {navItems.map((item) => (

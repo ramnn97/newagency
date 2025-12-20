@@ -119,7 +119,7 @@ const Services = () => {
                           {/* Step Label */}
                           <div className="mb-4">
                             <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white text-xs md:text-sm font-semibold">
-                              Step {service.step}
+                              {service.step}
                             </span>
                           </div>
 
