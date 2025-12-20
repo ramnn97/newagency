@@ -92,11 +92,11 @@ const AnimatedPages = () => {
                 </p>
               </div>
             </div>
-            <div className="aspect-[4/3] w-full overflow-hidden">
+            <div className="aspect-[4/3] w-full overflow-hidden flex items-center justify-center bg-white">
               <img
                 src="https://i.pinimg.com/736x/55/39/ca/5539ca8c75a79cdddc9353cd22c8772f.jpg"
                 alt="Product detail watch"
-                className="h-full w-full object-cover"
+                className="max-h-full max-w-full object-contain"
               />
             </div>
           </article>

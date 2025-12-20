@@ -96,7 +96,7 @@ export const Header = () => {
           <div className="flex items-center justify-between">
             <NavLink to="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
               <img src={sxsLogo} alt="ScaleX Studios" className="h-10 w-10" />
-              <span className="text-xl font-bold">ScaleX Studios</span>
+              <span className="text-xl font-bold text-black">ScaleX Studios</span>
             </NavLink>
 
             <button
@@ -105,7 +105,7 @@ export const Header = () => {
               className="h-10 w-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
               aria-label="Close menu"
             >
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6 text-black" />
             </button>
           </div>
         </div>
@@ -116,7 +116,7 @@ export const Header = () => {
               key={item.label}
               to={item.href}
               onClick={() => handleMenuClick(item.href)}
-              className="text-5xl md:text-6xl font-bold transition-all duration-300 hover:text-primary"
+              className="text-5xl md:text-6xl font-bold text-black transition-all duration-300 hover:text-primary"
               style={{
                 animation: menuOpen ? `fade-in-up 0.6s ease-out ${index * 0.1}s both` : "none",
               }}

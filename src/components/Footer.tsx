@@ -1,5 +1,6 @@
 import { Instagram, Twitter, Linkedin, Youtube, MessageCircle, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { NavLink } from "@/components/NavLink";
 
 interface FooterProps {
   darkTheme?: boolean;
@@ -45,9 +46,9 @@ export const Footer: React.FC<FooterProps> = ({ darkTheme = false, blueTheme = f
             <div className="space-y-2">
               <h4 className={`text-sm md:text-base font-semibold tracking-wide ${useLightText ? "text-indigo-100" : "text-white"}`}>Pune</h4>
               <p className={`text-xs md:text-sm ${useLightText ? "text-indigo-100/80" : "text-white"} font-medium`}>
-                Mukai Chowk
+                Ravet, Maharashtra
                 <br />
-                Pune 411001
+                411001
               </p>
             </div>
           </div>
@@ -60,31 +61,31 @@ export const Footer: React.FC<FooterProps> = ({ darkTheme = false, blueTheme = f
               </h4>
               <ul className="space-y-2 text-sm md:text-base">
                 <li className="group">
-                  <a
-                    href="#about"
+                  <NavLink
+                    to="/about"
                     className={`relative inline-flex items-center ${useLightText ? "text-indigo-100/80" : "text-white"} transition-transform duration-200 group-hover:translate-x-0.5`}
                   >
                     <span>About</span>
                     <span className="ml-1 h-px w-4 origin-left scale-x-0 bg-indigo-100/80 transition-transform duration-200 group-hover:scale-x-100" />
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="group">
-                  <a
-                    href="#projects"
+                  <NavLink
+                    to="/projects"
                     className={`relative inline-flex items-center ${useLightText ? "text-indigo-100/80" : "text-white"} transition-transform duration-200 group-hover:translate-x-0.5`}
                   >
                     <span>Projects</span>
                     <span className="ml-1 h-px w-4 origin-left scale-x-0 bg-indigo-100/80 transition-transform duration-200 group-hover:scale-x-100" />
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="group">
-                  <a
-                    href="#contact"
+                  <NavLink
+                    to="/contact"
                     className={`relative inline-flex items-center ${useLightText ? "text-indigo-100/80" : "text-white"} transition-transform duration-200 group-hover:translate-x-0.5`}
                   >
                     <span>Contact</span>
                     <span className="ml-1 h-px w-4 origin-left scale-x-0 bg-indigo-100/80 transition-transform duration-200 group-hover:scale-x-100" />
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="group">
                   <a
@@ -143,12 +144,13 @@ export const Footer: React.FC<FooterProps> = ({ darkTheme = false, blueTheme = f
             {/* Footer CTA */}
             <div className="pt-2 space-y-2">
               <p className="text-xs md:text-sm text-indigo-100/80">Have a project in mind?</p>
-              <button
+              <NavLink
+                to="/contact"
                 type="button"
                 className="inline-flex items-center rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs md:text-sm font-semibold tracking-wide text-indigo-50 transition duration-200 hover:bg-white/20 hover:-translate-y-0.5"
               >
                 Let&apos;s talk
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
