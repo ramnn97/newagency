@@ -86,24 +86,6 @@ const projects: Project[] = [
     url: "https://chatapp.com",
     image: mock7,
   },
-  {
-    id: "Educational Website",
-    title: "Educational Website",
-    subtitle: "India",
-    description: "Educational Website",
-    category: "Website",
-    url: "https://educationalwebsite.com",
-    image: mock8,
-  },
-  {
-    id: "zaap",
-    title: "Zaap",
-    subtitle: "Energy",
-    description: "Energy Brand",
-    category: "Energy Brand",
-    url: "https://zaapenergy.com",
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop",
-  },
 ];
 
 const Projects = () => {
@@ -133,11 +115,6 @@ const Projects = () => {
         className="min-h-screen flex items-center relative overflow-hidden px-10 md:px-16 pt-16"
       >
         <div className="max-w-6xl w-full relative z-10 text-white space-y-8 py-12 md:py-20">
-          <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 border border-gray-700 hover:border-white transition-colors text-sm font-medium shadow-lg">
-            Watch Demo
-            <span className="w-6 h-6 rounded-full bg-white text-black text-[10px] flex items-center justify-center">▶</span>
-          </button>
-
           <div className="space-y-3">
             <h1 className="text-3xl md:text-4xl font-black leading-tight drop-shadow-lg">
               Create real-time dashboards
@@ -150,13 +127,13 @@ const Projects = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <Button
-              size="lg"
+            <a
+              href="mailto:hello@scalexstudios.com?subject=Dashboard Inquiry&body=Hello ScaleX Team,%0D%0A%0D%0AI'm interested in building my first dashboard.%0D%0A%0D%0APlease provide more information.%0D%0A%0D%0AThank you!"
               className="px-6 py-3 rounded-full bg-white text-black hover:bg-gray-200 transition-colors flex items-center gap-2 shadow-lg"
             >
               Build your first dashboard
               <ExternalLink className="w-4 h-4" />
-            </Button>
+            </a>
 
             <button
               onClick={() => {
@@ -199,21 +176,7 @@ const Projects = () => {
                       style={{ backgroundImage: `url(${group.large.image})` }}
                     />
                     <div className="relative p-12 md:p-16 min-h-[500px] md:min-h-[600px] flex flex-col justify-between">
-                      <div>
-                        <div className="flex flex-col gap-1 mb-6">
-                          <h3 className="text-5xl md:text-7xl font-black text-white leading-tight">
-                            {group.large.title}
-                          </h3>
-                          {group.large.subtitle && (
-                            <span className="text-3xl md:text-5xl font-black text-white leading-tight">
-                              {group.large.subtitle}
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-xl md:text-2xl text-white font-medium">
-                          {group.large.description}
-                        </p>
-                      </div>
+                      <div></div>
                       <div className="flex items-center gap-2 text-gray-200 group-hover:text-white transition-colors">
                         <span className="text-sm font-medium">View Project</span>
                         <ExternalLink className="w-4 h-4" />
@@ -240,21 +203,7 @@ const Projects = () => {
                           style={{ backgroundImage: `url(${project.image})` }}
                         />
                         <div className="relative p-8 md:p-12 h-full flex flex-col justify-between">
-                          <div>
-                            <div className="flex flex-col gap-1 mb-6">
-                              <h3 className="text-4xl md:text-5xl font-black text-white leading-tight">
-                                {project.title}
-                              </h3>
-                              {project.subtitle && (
-                                <span className="text-2xl md:text-3xl font-black text-white leading-tight">
-                                  {project.subtitle}
-                                </span>
-                              )}
-                            </div>
-                            <p className="text-lg md:text-xl text-white font-medium">
-                              {project.description}
-                            </p>
-                          </div>
+                          <div></div>
                           <div className="flex items-center gap-2 text-gray-200 group-hover:text-white transition-colors mt-4">
                             <span className="text-sm font-medium">View Project</span>
                             <ExternalLink className="w-4 h-4" />
@@ -276,4 +225,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

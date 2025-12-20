@@ -89,19 +89,12 @@ export const Footer: React.FC<FooterProps> = ({ darkTheme = false, blueTheme = f
                 </li>
                 <li className="group">
                   <a
-                    href="#blogs"
+                    href="https://www.instagram.com/scalexstudios/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`relative inline-flex items-center ${useLightText ? "text-indigo-100/80" : "text-white"} transition-transform duration-200 group-hover:translate-x-0.5`}
                   >
-                    <span>Blogs</span>
-                    <span className="ml-1 h-px w-4 origin-left scale-x-0 bg-indigo-100/80 transition-transform duration-200 group-hover:scale-x-100" />
-                  </a>
-                </li>
-                <li className="group">
-                  <a
-                    href="#policy"
-                    className={`relative inline-flex items-center ${useLightText ? "text-indigo-100/80" : "text-white"} transition-transform duration-200 group-hover:translate-x-0.5`}
-                  >
-                    <span>Policy</span>
+                    <span>Stalk Us</span>
                     <span className="ml-1 h-px w-4 origin-left scale-x-0 bg-indigo-100/80 transition-transform duration-200 group-hover:scale-x-100" />
                   </a>
                 </li>

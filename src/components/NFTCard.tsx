@@ -49,7 +49,7 @@ const NFTCard: React.FC = () => {
             <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-8 lg:gap-12">
               <div className="flex-shrink-0">
                 <span 
-                  className="text-6xl md:text-7xl lg:text-8xl font-light italic text-white leading-tight"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light italic text-white leading-tight block"
                   style={{
                     textShadow: '0.5px 0.5px 0px rgba(255, 255, 255, 0.9), -0.5px -0.5px 0px rgba(255, 255, 255, 0.9), 0.5px -0.5px 0px rgba(255, 255, 255, 0.9), -0.5px 0.5px 0px rgba(255, 255, 255, 0.9)',
                     letterSpacing: '-0.03em',
@@ -61,7 +61,7 @@ const NFTCard: React.FC = () => {
               </div>
               <div className="flex-grow lg:pl-8">
                 <span 
-                  className="text-6xl md:text-7xl lg:text-8xl font-light italic block leading-tight" 
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light italic block leading-tight" 
                   style={{ 
                     color: '#E8DCC6',
                     letterSpacing: '-0.03em',
@@ -76,14 +76,14 @@ const NFTCard: React.FC = () => {
             {/* Second row */}
             <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-8 lg:gap-12">
               <div className="flex-shrink-0">
-                <span className="text-5xl md:text-6xl lg:text-7xl font-normal text-white leading-tight">
+                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight block">
                  
                   FOR GROWING BRANDS
-                  <span className="text-3xl align-super ml-1">©</span>
+                  <span className="text-2xl md:text-3xl align-super ml-1">©</span>
                 </span>
               </div>
               <div className="flex-grow lg:pl-8">
-                <span className="text-5xl md:text-6xl lg:text-7xl font-normal text-white block leading-tight">
+                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white block leading-tight">
                 FOCUSED ON
 
                 </span>
@@ -95,7 +95,7 @@ const NFTCard: React.FC = () => {
               <div className="hidden lg:block lg:w-1/3 flex-shrink-0"></div>
               <div className="flex-grow lg:pl-8">
                 <span 
-                  className="text-6xl md:text-7xl lg:text-8xl font-light italic block leading-tight" 
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light italic block leading-tight" 
                   style={{ 
                     color: '#E8DCC6',
                     letterSpacing: '-0.03em',
