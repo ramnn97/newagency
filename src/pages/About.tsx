@@ -19,7 +19,7 @@ const About = () => {
         </div>
 
         {/* Banner Image - Full Width, 45% Height */}
-        <section className="relative w-full h-[45vh] mb-12 md:mb-16">
+        <section className="hidden md:block relative w-full h-[45vh] mb-12 md:mb-16">
           <img
             src={about1}
             alt="About us hero"
@@ -28,7 +28,7 @@ const About = () => {
           {/* Text Overlay - Left Side */}
           <div className="absolute left-0 top-0 bottom-0 flex items-center pl-6 md:pl-12 lg:pl-16 pr-4 md:pr-8 lg:pr-12 max-w-[90%] md:max-w-[60%] lg:max-w-[50%]">
             <p className="text-white text-lg md:text-xl lg:text-2xl font-semibold leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              ScaleX is powered by Indian Gen-Z minds — creative thinkers, designers, and developers turning ideas into high-impact digital realities
+              ScaleX is powered by Indian Gen-Z minds creative thinkers, designers, and developers turning ideas into high-impact digital realities
             </p>
           </div>
         </section>
