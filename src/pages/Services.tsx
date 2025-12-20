@@ -125,61 +125,106 @@ const Services = () => {
 
                           {/* Abstract Graphic - Tunnel/Concentric Tubes Design */}
                           <div className="mb-4 h-32 md:h-40 bg-gradient-to-br from-purple-900/30 via-purple-800/20 to-pink-900/30 rounded-xl flex items-center justify-center overflow-hidden relative border border-white/10">
-                            <svg
-                              viewBox="0 0 320 180"
-                              className="w-full h-full"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <defs>
-                                <linearGradient id={`gradient1-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                  <stop offset="0%" stopColor="#a855f7" stopOpacity="0.7" />
-                                  <stop offset="100%" stopColor="#ec4899" stopOpacity="0.5" />
-                                </linearGradient>
-                                <linearGradient id={`gradient2-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                  <stop offset="0%" stopColor="#ec4899" stopOpacity="0.6" />
-                                  <stop offset="100%" stopColor="#a855f7" stopOpacity="0.4" />
-                                </linearGradient>
-                                <linearGradient id={`gradient3-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                  <stop offset="0%" stopColor="#a855f7" stopOpacity="0.5" />
-                                  <stop offset="100%" stopColor="#ec4899" stopOpacity="0.3" />
-                                </linearGradient>
-                                <linearGradient id={`gradient4-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                  <stop offset="0%" stopColor="#ec4899" stopOpacity="0.4" />
-                                  <stop offset="100%" stopColor="#a855f7" stopOpacity="0.2" />
-                                </linearGradient>
-                              </defs>
-                              {/* Curved tunnel/tube shapes */}
-                              <path
-                                d="M40 90 Q80 60, 120 90 T200 90 T280 90"
-                                stroke={`url(#gradient1-${index})`}
-                                strokeWidth="12"
-                                fill="none"
-                                strokeLinecap="round"
+                            {index === 0 ? (
+                              // For the first service (Web Development), show the provided image
+                              <img 
+                                src="https://cdn.cosmos.so/78c03f2d-18ee-4896-94da-c07cbd7d394d?format=jpeg" 
+                                alt="Web Development" 
+                                className="w-full h-full object-cover rounded-xl"
                               />
-                              <path
-                                d="M50 110 Q90 80, 130 110 T210 110 T290 110"
-                                stroke={`url(#gradient2-${index})`}
-                                strokeWidth="10"
-                                fill="none"
-                                strokeLinecap="round"
+                            ) : index === 1 ? (
+                              // For the second service (Digital Marketing), show the provided image
+                              <img 
+                                src="https://cdn.cosmos.so/ddb34755-6c4a-4ced-b461-f41324e13523?format=jpeg" 
+                                alt="Digital Marketing" 
+                                className="w-full h-full object-cover rounded-xl"
                               />
-                              <path
-                                d="M60 130 Q100 100, 140 130 T220 130 T300 130"
-                                stroke={`url(#gradient3-${index})`}
-                                strokeWidth="8"
-                                fill="none"
-                                strokeLinecap="round"
+                            ) : index === 2 ? (
+                              // For the third service (Video Production & Motion Graphics), show the provided image
+                              <img 
+                                src="https://i.pinimg.com/736x/cd/69/b9/cd69b9a224121cf3b0b23e75d27b6092.jpg" 
+                                alt="Video Production & Motion Graphics" 
+                                className="w-full h-full object-cover rounded-xl"
                               />
-                              {/* Organic top edge shape */}
-                              <path
-                                d="M20 70 Q60 50, 100 70 Q140 50, 180 70 Q220 50, 260 70 Q300 50, 320 70"
-                                stroke={`url(#gradient4-${index})`}
-                                strokeWidth="6"
-                                fill="none"
-                                strokeLinecap="round"
+                            ) : index === 3 ? (
+                              // For the fourth service (Meme Marketing), show the provided image
+                              <img 
+                                src="https://i.pinimg.com/736x/c3/9b/aa/c39baaa39951f57c107734f6aed89149.jpg" 
+                                alt="Meme Marketing" 
+                                className="w-full h-full object-cover rounded-xl"
                               />
-                            </svg>
+                            ) : index === 4 ? (
+                              // For the fifth service (Content Marketing), show the provided image
+                              <img 
+                                src="https://i.pinimg.com/736x/4b/0c/b3/4b0cb3935024aaef562942dd1213725e.jpg" 
+                                alt="Content Marketing" 
+                                className="w-full h-full object-cover rounded-xl"
+                              />
+                            ) : index === 5 ? (
+                              // For the sixth service (Ad Production), show the provided image
+                              <img 
+                                src="https://i.pinimg.com/736x/3c/8a/d6/3c8ad6e9a90db3f8258a7abef45dd300.jpg" 
+                                alt="Ad Production" 
+                                className="w-full h-full object-cover rounded-xl"
+                              />
+                            ) : (
+                              // For other services, keep the abstract SVG design
+                              <svg
+                                viewBox="0 0 320 180"
+                                className="w-full h-full"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <defs>
+                                  <linearGradient id={`gradient1-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="#a855f7" stopOpacity="0.7" />
+                                    <stop offset="100%" stopColor="#ec4899" stopOpacity="0.5" />
+                                  </linearGradient>
+                                  <linearGradient id={`gradient2-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="#ec4899" stopOpacity="0.6" />
+                                    <stop offset="100%" stopColor="#a855f7" stopOpacity="0.4" />
+                                  </linearGradient>
+                                  <linearGradient id={`gradient3-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="#a855f7" stopOpacity="0.5" />
+                                    <stop offset="100%" stopColor="#ec4899" stopOpacity="0.3" />
+                                  </linearGradient>
+                                  <linearGradient id={`gradient4-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="#ec4899" stopOpacity="0.4" />
+                                    <stop offset="100%" stopColor="#a855f7" stopOpacity="0.2" />
+                                  </linearGradient>
+                                </defs>
+                                {/* Curved tunnel/tube shapes */}
+                                <path
+                                  d="M40 90 Q80 60, 120 90 T200 90 T280 90"
+                                  stroke={`url(#gradient1-${index})`}
+                                  strokeWidth="12"
+                                  fill="none"
+                                  strokeLinecap="round"
+                                />
+                                <path
+                                  d="M50 110 Q90 80, 130 110 T210 110 T290 110"
+                                  stroke={`url(#gradient2-${index})`}
+                                  strokeWidth="10"
+                                  fill="none"
+                                  strokeLinecap="round"
+                                />
+                                <path
+                                  d="M60 130 Q100 100, 140 130 T220 130 T300 130"
+                                  stroke={`url(#gradient3-${index})`}
+                                  strokeWidth="8"
+                                  fill="none"
+                                  strokeLinecap="round"
+                                />
+                                {/* Organic top edge shape */}
+                                <path
+                                  d="M20 70 Q60 50, 100 70 Q140 50, 180 70 Q220 50, 260 70 Q300 50, 320 70"
+                                  stroke={`url(#gradient4-${index})`}
+                                  strokeWidth="6"
+                                  fill="none"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            )}
                           </div>
 
                           {/* Service Info - Subtitle above Title */}
