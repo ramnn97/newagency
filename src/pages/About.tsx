@@ -1,9 +1,8 @@
 import { Header } from "@/components/Header";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Footer } from "@/components/Footer";
-import mainpage from "@/assets/mainpage.jpeg";
+import mainpage from "@/assets/About2.png";
 import about1 from "@/assets/About1.jpeg";
-import about2 from "@/assets/About2.png";
 
 const About = () => {
   return (
@@ -14,18 +13,24 @@ const About = () => {
       <main className="relative z-10">
         {/* Small Title at Top Left */}
         <div className="px-6 md:px-12 lg:px-16 pt-24 md:pt-32">
-          <h1 className="text-lg md:text-xl font-bold text-white mb-4 text-left">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 text-left">
             ABOUT US
           </h1>
         </div>
 
         {/* Banner Image - Full Width, 45% Height */}
-        <section className="w-full h-[45vh] mb-12 md:mb-16">
+        <section className="relative w-full h-[45vh] mb-12 md:mb-16">
           <img
             src={about1}
             alt="About us hero"
             className="w-full h-full object-cover"
           />
+          {/* Text Overlay - Left Side */}
+          <div className="absolute left-0 top-0 bottom-0 flex items-center pl-6 md:pl-12 lg:pl-16 pr-4 md:pr-8 lg:pr-12 max-w-[90%] md:max-w-[60%] lg:max-w-[50%]">
+            <p className="text-white text-lg md:text-xl lg:text-2xl font-semibold leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              ScaleX is powered by Indian Gen-Z minds — creative thinkers, designers, and developers turning ideas into high-impact digital realities
+            </p>
+          </div>
         </section>
 
         {/* Introduction Section - Two Column - Full Width */}
@@ -80,7 +85,7 @@ const About = () => {
             {/* Right Column - Large Image */}
             <div>
               <img
-                src={about2}
+                src={mainpage}
                 alt="Our work"
                 className="w-full h-full min-h-[400px] md:min-h-[500px] object-cover rounded-lg"
               />
