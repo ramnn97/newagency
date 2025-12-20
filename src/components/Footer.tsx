@@ -1,4 +1,4 @@
-import { Instagram, Twitter, Linkedin, Youtube, MessageCircle, ArrowUp } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Youtube, MessageCircle, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 
@@ -123,18 +123,24 @@ export const Footer: React.FC<FooterProps> = ({ darkTheme = false, blueTheme = f
             <div className="flex gap-3 pt-2">
               <a
                 href="https://www.instagram.com/scalexstudios/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-indigo-50 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-[0_0_18px_rgba(255,255,255,0.35)]"
               >
                 <Instagram className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/share/16ennpniUk/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-indigo-50 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-[0_0_18px_rgba(255,255,255,0.35)]"
               >
-                <Twitter className="h-4 w-4" />
+                <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/scale-x-studios/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-indigo-50 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-[0_0_18px_rgba(255,255,255,0.35)]"
               >
                 <Linkedin className="h-4 w-4" />

@@ -2,6 +2,8 @@ import { Header } from "@/components/Header";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Footer } from "@/components/Footer";
 import mainpage from "@/assets/mainpage.jpeg";
+import about1 from "@/assets/About1.jpeg";
+import about2 from "@/assets/About2.png";
 
 const About = () => {
   return (
@@ -20,7 +22,7 @@ const About = () => {
         {/* Banner Image - Full Width, 45% Height */}
         <section className="w-full h-[45vh] mb-12 md:mb-16">
           <img
-            src={mainpage}
+            src={about1}
             alt="About us hero"
             className="w-full h-full object-cover"
           />
@@ -78,7 +80,7 @@ const About = () => {
             {/* Right Column - Large Image */}
             <div>
               <img
-                src={mainpage}
+                src={about2}
                 alt="Our work"
                 className="w-full h-full min-h-[400px] md:min-h-[500px] object-cover rounded-lg"
               />
