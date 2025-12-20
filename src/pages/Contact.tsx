@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const Contact = () => {
   return (
@@ -153,6 +154,7 @@ const Contact = () => {
         </div>
       </main>
 
+      <Footer darkTheme />
     </div>
   );
 };
