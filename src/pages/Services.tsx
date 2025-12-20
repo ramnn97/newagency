@@ -62,7 +62,7 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f3ff] text-gray-900 flex flex-col">
+    <div className="min-h-screen bg-black text-white flex flex-col">
       <Header />
 
       <main className="flex-1 px-4 py-16 md:py-24">
@@ -71,7 +71,7 @@ const Services = () => {
           <div className="mb-16 md:mb-24 grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Left: Main Title */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 ScaleX Services,
                 <br />
                 Built to Perform
@@ -80,10 +80,10 @@ const Services = () => {
 
             {/* Right: Explanation Block */}
             <div className="flex flex-col items-start md:items-end">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-purple-200/60 text-purple-700 text-xs md:text-sm font-medium mb-4">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 text-white text-xs md:text-sm font-medium mb-4">
                 How it Works
               </div>
-              <p className="text-base md:text-lg text-gray-700 max-w-md text-left md:text-right leading-relaxed">
+              <p className="text-base md:text-lg text-white max-w-md text-left md:text-right leading-relaxed">
                 We design and execute scalable digital systems that help modern brands grow with clarity and consistency.
               </p>
             </div>
@@ -110,7 +110,7 @@ const Services = () => {
                       >
                         <div
                           onClick={() => handleCardClick(index)}
-                          className={`bg-white rounded-2xl p-6 md:p-8 shadow-lg cursor-pointer transition-all duration-300 ${
+                          className={`bg-black border border-white/20 rounded-2xl p-6 md:p-8 shadow-lg cursor-pointer transition-all duration-300 ${
                             index === currentIndex
                               ? "ring-2 ring-purple-500"
                               : "hover:shadow-xl opacity-90"
@@ -118,13 +118,13 @@ const Services = () => {
                         >
                           {/* Step Label */}
                           <div className="mb-4">
-                            <span className="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs md:text-sm font-semibold">
+                            <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white text-xs md:text-sm font-semibold">
                               Step {service.step}
                             </span>
                           </div>
 
                           {/* Abstract Graphic - Tunnel/Concentric Tubes Design */}
-                          <div className="mb-4 h-32 md:h-40 bg-gradient-to-br from-purple-200 via-purple-100 to-pink-100 rounded-xl flex items-center justify-center overflow-hidden relative">
+                          <div className="mb-4 h-32 md:h-40 bg-gradient-to-br from-purple-900/30 via-purple-800/20 to-pink-900/30 rounded-xl flex items-center justify-center overflow-hidden relative border border-white/10">
                             <svg
                               viewBox="0 0 320 180"
                               className="w-full h-full"
@@ -184,10 +184,10 @@ const Services = () => {
 
                           {/* Service Info - Subtitle above Title */}
                           <div className="mb-4">
-                            <p className="text-xs md:text-sm text-purple-600 font-medium mb-1">
+                            <p className="text-xs md:text-sm text-white/70 font-medium mb-1">
                               {service.subtitle}
                             </p>
-                            <h3 className="text-xl md:text-2xl font-bold text-gray-800">
+                            <h3 className="text-xl md:text-2xl font-bold text-white">
                               {service.title}
                             </h3>
                           </div>
@@ -199,7 +199,7 @@ const Services = () => {
                                 e.stopPropagation();
                                 handleNext();
                               }}
-                              className="w-full mt-4 px-4 py-2 border-2 border-purple-500 rounded-lg text-purple-600 font-medium text-sm hover:bg-purple-50 transition-colors flex items-center justify-center gap-2"
+                              className="w-full mt-4 px-4 py-2 border-2 border-white/40 rounded-lg text-white font-medium text-sm hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
                             >
                               Next <ChevronRight className="w-4 h-4" />
                             </button>
@@ -211,11 +211,11 @@ const Services = () => {
                 </div>
 
                 {/* Description Card - Side by Side */}
-                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-                  <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                <div className="bg-black border border-white/20 rounded-2xl p-6 md:p-8 shadow-lg">
+                  <p className="text-base md:text-lg text-white leading-relaxed mb-6">
                     {currentService.description}
                   </p>
-                  <button className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-full font-semibold text-sm md:text-base hover:bg-purple-700 transition-colors">
+                  <button className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-semibold text-sm md:text-base hover:bg-white/90 transition-colors">
                     Get Started
                     <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
                   </button>
@@ -227,8 +227,8 @@ const Services = () => {
                       disabled={currentIndex === 0}
                       className={`w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all ${
                         currentIndex === 0
-                          ? "border-purple-300 bg-purple-100 text-purple-400 cursor-not-allowed"
-                          : "border-purple-500 bg-white text-purple-600 hover:bg-purple-50"
+                          ? "border-white/20 bg-white/5 text-white/40 cursor-not-allowed"
+                          : "border-white/40 bg-black text-white hover:bg-white/10"
                       }`}
                       aria-label="Previous card"
                     >
@@ -239,8 +239,8 @@ const Services = () => {
                       disabled={currentIndex >= maxIndex}
                       className={`w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all ${
                         currentIndex >= maxIndex
-                          ? "border-purple-300 bg-purple-100 text-purple-400 cursor-not-allowed"
-                          : "border-purple-500 bg-white text-purple-600 hover:bg-purple-50"
+                          ? "border-white/20 bg-white/5 text-white/40 cursor-not-allowed"
+                          : "border-white/40 bg-black text-white hover:bg-white/10"
                       }`}
                       aria-label="Next card"
                     >
