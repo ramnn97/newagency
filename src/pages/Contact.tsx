@@ -1,6 +1,9 @@
 import { Header } from "@/components/Header";
 
 const Contact = () => {
+  // Get the homepage URL for redirect after form submission
+  const homepageUrl = typeof window !== 'undefined' ? window.location.origin : '';
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       <Header />
@@ -78,6 +81,7 @@ const Contact = () => {
               <input type="hidden" name="_subject" value="New Contact Form Submission from ScaleX Website" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value={homepageUrl} />
               
               <div className="space-y-1 text-sm">
                 <label className="block font-medium">
